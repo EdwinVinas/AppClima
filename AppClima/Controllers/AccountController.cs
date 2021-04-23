@@ -48,5 +48,37 @@ namespace AppClima.Controllers
             
             return View(new LoginModel());
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View("Registrar", new Usuario());
+        }
+
+        [HttpPost, ActionName("Create")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Registrar(Usuario entidad)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    entidad.UsuarioModifica = entidad.UsuarioModifica is null ? "SYSADMIN" : entidad.UsuarioModifica;
+                    entidad.ProgramaModifica = entidad.ProgramaModifica is null ? nameof(PronosticoController) : entidad.UsuarioModifica;
+                    entidad.EquipoModifica = entidad.EquipoModifica is null ? Environment.MachineName : entidad.UsuarioModifica;
+                    entidad.FechaModifica = DateTime.Now;
+
+                    _context.Usuario.Add(entidad);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Login");
+                }
+            }
+            catch (DataException)
+            {
+                ModelState.AddModelError("", "No se pueden guardar los cambios.Vuelva a intentarlo y, si el problema persiste, consulte con el administrador del sistema.");
+            }
+            return View("Registrar", entidad);
+        }
+
     }
 }

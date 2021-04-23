@@ -9,7 +9,7 @@ namespace modelo
 {
     public class Usuario
     {
-        [Key]
+        [Key, Required(AllowEmptyStrings = false)]
         public string IdUsuario { get; set; }
         [Required(AllowEmptyStrings = false)]
         public string Nombre { get; set; }
@@ -17,7 +17,7 @@ namespace modelo
         public string Apellido { get; set; }
         [Required(AllowEmptyStrings = false)]
         public string Email { get; set; }
-        [Required(AllowEmptyStrings = false)]
+        [DataType(DataType.Password), Required(AllowEmptyStrings = false)]
         public string Password { get; set; }
         public string UsuarioModifica { get; set; }
         public string ProgramaModifica { get; set; }

@@ -175,6 +175,7 @@
     <Content Include="Views\Pronostico\Edit.cshtml" />
     <Content Include="Views\Pronostico\Delete.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Registrar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

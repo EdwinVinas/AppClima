@@ -12,6 +12,8 @@
     <title>Login</title>
 </head>
 <body>
+    <p>@Html.ActionLink("Registrar", "Create", "Account")</p>
+
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
