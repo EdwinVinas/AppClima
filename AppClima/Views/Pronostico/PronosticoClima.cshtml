@@ -1,0 +1,112 @@
+﻿@model IEnumerable<modelo.PronosticoClima>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PronosticoClima</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cod_Div)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Latitud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Región)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Municipio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Temperatura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precipitacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProbabilidadTormenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Humedad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pronostico)
+            </th>            
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cod_Div)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longitud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Región)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Municipio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Temperatura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precipitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProbabilidadTormenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Humedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pronostico)
+            </td>            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Cod_Div }) |             
+                @Html.ActionLink("Delete", "Delete", new { id=item.Cod_Div })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
