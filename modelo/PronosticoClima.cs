@@ -21,7 +21,8 @@ namespace modelo
         public string Departamento { get; set; }
         [Required, MaxLength(100)]
         public string Municipio { get; set; }
-        [Required]
+        [DataType(DataType.Date, ErrorMessage = "Date only")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Fecha { get; set; }
         public decimal Temperatura { get; set; }       
         public decimal Presion { get; set; }

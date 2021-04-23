@@ -9,152 +9,170 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
+    <title>Eliminar</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <h3>Are you sure you want to delete this?</h3>
-    <div>
-        <h4>PronosticoClima</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Latitud)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Latitud)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Longitud)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Longitud)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Región)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Región)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Departamento)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Departamento)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Municipio)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Municipio)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Fecha)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Fecha)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Temperatura)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Temperatura)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Presion)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Presion)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Precipitacion)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Precipitacion)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.ProbabilidadTormenta)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.ProbabilidadTormenta)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Humedad)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Humedad)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Pronostico)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Pronostico)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.UsuarioModifica)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.UsuarioModifica)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.ProgramaModifica)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.ProgramaModifica)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.FechaModifica)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.FechaModifica)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.EquipoModifica)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.EquipoModifica)
-            </dd>
-    
-        </dl>
-    
-        @using (Html.BeginForm()) {
-            @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="row">
+            <h3>¿Estás seguro de que quieres eliminar esto?</h3>
+            <hr />
+            <div>
+                <h4>Pronostico Clima</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Latitud)
+                    </dt>
 
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "PronosticoClima")
+                    <dd>
+                        @Html.DisplayFor(model => model.Latitud)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Longitud)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Longitud)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Región)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Región)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Departamento)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Departamento)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Municipio)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Municipio)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Fecha)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Fecha)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Temperatura)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Temperatura)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Presion)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Presion)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Precipitacion)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Precipitacion)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProbabilidadTormenta)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ProbabilidadTormenta)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Humedad)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Humedad)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Pronostico)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Pronostico)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UsuarioModifica)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UsuarioModifica)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProgramaModifica)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ProgramaModifica)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FechaModifica)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.FechaModifica)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.EquipoModifica)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.EquipoModifica)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </div>
+                }
             </div>
-        }
+        </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <hr />
+            <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("PronosticoClima", "Pronostico")';return false;">Regresar</button>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>

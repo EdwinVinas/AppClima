@@ -10,6 +10,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Nuevo Pronostico del Clima</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     @using (Html.BeginForm())
@@ -18,9 +21,9 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <div class="form-horizontal">
-                        <h3>Nuevo Pronostico Clima</h3>
+                        <h3>Nuevo Pronostico</h3>
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group">
@@ -120,7 +123,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Create" class="btn btn-primary" />
+                                <input type="submit" value="Enviar" class="btn btn-primary" />
                             </div>
                         </div>
                     </div>
@@ -128,9 +131,13 @@
             </div>
         </div>
     }
-
-    <div>
-        @Html.ActionLink("Back to List", "PronosticoClima")
+    <div class="container">
+        <div class="row">
+            <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("PronosticoClima", "Pronostico")';return false;">Regresar</button>
+        </div>
     </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>
